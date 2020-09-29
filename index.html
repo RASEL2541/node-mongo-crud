@@ -35,7 +35,7 @@
       }
       loadAllProducts();
       function loadProducts (id){
-        fetch(` product/${id`)
+        fetch('product/${id')
           .then(res => res.json())
           .then (data=> {
           const update = document.getElementById("update");
@@ -53,12 +53,12 @@
       const quantity= document.getElementById('quantity').value;
       const product={id,price,quantity};
       fetch(`/update/${id}`,{
-        method:"Patch";
-        headers:{'content-Ttype' : "application/json"}
-        body: JSON.stringify(product)
+        method:'PATCH',
+        headers:{'content-Ttype' : 'application/json'},
+        body: JSON.stringify(product) 
       })
         .then(res.json())
-        .then(result)=>{
+        .then(result=>{
          if(result){
             loadAllProducts();
             document.getElementById('update').innerHTML=
@@ -68,7 +68,7 @@
       }
       function deleteProduct(event, id){
      fetch(`/delete/${id}`,{
-       method: 'DELETE'
+       method: 'DELETE' 
      })
      .then(res => res.json())
      .then(result =>{
